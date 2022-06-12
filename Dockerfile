@@ -8,7 +8,7 @@ ENV GECKODRIVER_VER v0.31.0
 
 # Add geckodriver
 RUN set -x \
-   && curl -sSLO https://github.com/mozilla/geckodriver/releases/download/${GECKODRIVER_VER}/geckodriver-${GECKODRIVER_VER}-linux32.tar.gz \
+   && curl -sSLO https://github.com/jamesmortensen/geckodriver-arm-binaries/releases/download/${GECKODRIVER_VER}/geckodriver-${GECKODRIVER_VER}-linux-armv7l.tar.gz \
    && tar zxf geckodriver-*.tar.gz \
    && mv geckodriver /usr/bin/
 
