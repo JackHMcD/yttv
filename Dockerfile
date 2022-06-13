@@ -12,7 +12,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     && pip install --no-cache-dir selenium==4.0.0a6.post2 \
     async-generator atomicwrites attrs certifi cffi colorama cryptography h11 \
     idna iniconfig outcome packaging pluggy py pycparser pyopenssl pyparsing pysocks requests \
-    sniffio sortedcontainers tomli trio trio-websocket urllib3 wsproto --index-url https://www.piwheels.org/simple \
+    six sniffio sortedcontainers tomli trio trio-websocket urllib3 wsproto --index-url https://www.piwheels.org/simple \
     && apt-get purge -y --auto-remove $buildDeps \
     && rm -rf /var/lib/apt/lists/*
 
