@@ -2,9 +2,6 @@ FROM arm32v7/rust:slim-bullseye AS geckodriver
 RUN apt-get update && apt-get install -y --no-install-recommends curl wget \
     && curl -sSLO https://github.com/jamesmortensen/geckodriver-arm-binaries/releases/download/v0.31.0/geckodriver-v0.31.0-linux-armv7l.tar.gz \
     && tar -zxf geckodriver-*.tar.gz \
-    && cd geckodriver-v0.31.0 \
-    && cargo build --release \
-    && cp target/release/geckodriver / \
     && rm -rf /var/lib/apt/lists/*
 
 FROM arm32v7/python:3.9-slim-bullseye
