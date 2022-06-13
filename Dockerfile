@@ -13,7 +13,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     psycopg2 SQLAlchemy pandas rq redis python-dotenv python-dateutil \
     async-generator atomicwrites attrs certifi cffi colorama cryptography h11 \
     idna iniconfig outcome packaging pluggy py pycparser pyopenssl pyparsing pysocks requests \
-    sniffio sortedcontainers tomli trio trio-websocket urllib3 wsproto --index-url https://www.piwheels.org/simple
+    sniffio sortedcontainers tomli trio trio-websocket urllib3 wsproto --index-url https://www.piwheels.org/simple \
     && apt-get purge -y --auto-remove $buildDeps \
     && rm -rf /var/lib/apt/lists/*
 
