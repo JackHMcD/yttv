@@ -1,9 +1,8 @@
 FROM arm32v7/rust:slim-bullseye AS geckodriver
 RUN apt-get update && apt-get install -y --no-install-recommends curl wget \
-    && GECKODRIVER_VERSION=`curl https://github.com/mozilla/geckodriver/releases/latest | grep -oE '[0-9]+.[0-9]+.[0-9]+'` \
-    && wget https://github.com/jamesmortensen/geckodriver-arm-binaries/releases/download/${GECKODRIVER_VERSION}/geckodriver-${GECKODRIVER_VERSION}-linux-armv7l.tar.gz \
-    && tar -zxf geckodriver.tar.gz \
-    && cd geckodriver-$GECKODRIVER_VERSION \
+    && curl -sSLO https://github.com/jamesmortensen/geckodriver-arm-binaries/releases/download/v0.31.0/geckodriver-v0.31.0-linux-armv7l.tar.gz \
+    && tar -zxf geckodriver-*.tar.gz \
+    && cd geckodriver-v0.31.0 \
     && cargo build --release \
     && cp target/release/geckodriver / \
     && rm -rf /var/lib/apt/lists/*
