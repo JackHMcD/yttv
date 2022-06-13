@@ -5,12 +5,11 @@ ENV PYTHONUNBUFFERED=1 \
 RUN --mount=type=cache,target=/root/.cache/pip \
     buildDeps='gcc python-dev' \
     && set -x \
-    && apt-get update && apt-get install -y --no-install-recommends $buildDeps firefox-esr libpq-dev curl  \
+    && apt-get update && apt-get install -y --no-install-recommends $buildDeps firefox-esr libx11-xcb1 libdbus-glib-1-2 packagekit-gtk3-module pulseaudio pulseaudio-utils curl \
     && curl -sSLO https://github.com/jamesmortensen/geckodriver-arm-binaries/releases/download/v0.31.0/geckodriver-v0.31.0-linux-armv7l.tar.gz \
     && tar -zxf geckodriver-*.tar.gz \
     && mv geckodriver /usr/local/bin \
-    && pip install --no-cache-dir Scrapy selenium==4.0.0a6.post2 scrapy-selenium itemloaders itemadapter \
-    psycopg2 SQLAlchemy pandas rq redis python-dotenv python-dateutil \
+    && pip install --no-cache-dir selenium==4.0.0a6.post2 \
     async-generator atomicwrites attrs certifi cffi colorama cryptography h11 \
     idna iniconfig outcome packaging pluggy py pycparser pyopenssl pyparsing pysocks requests \
     sniffio sortedcontainers tomli trio trio-websocket urllib3 wsproto --index-url https://www.piwheels.org/simple \
