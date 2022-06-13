@@ -8,7 +8,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     && apt-get update && apt-get install -y --no-install-recommends $buildDeps firefox-esr libpq-dev curl  \
     && curl -sSLO https://github.com/jamesmortensen/geckodriver-arm-binaries/releases/download/v0.31.0/geckodriver-v0.31.0-linux-armv7l.tar.gz \
     && tar -zxf geckodriver-*.tar.gz \
-    && mv geckodriver /usr/local/bin
+    && mv geckodriver /usr/local/bin \
     && pip install --no-cache-dir Scrapy selenium scrapy-selenium itemloaders itemadapter \
     psycopg2 SQLAlchemy pandas rq redis python-dotenv python-dateutil \
     async-generator atomicwrites attrs certifi cffi colorama cryptography h11 \
