@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM arm32v7/rust:slim-bullseye AS geckodriver
+FROM arm32v7/rust:slim-bullseye AS geckodriver
 RUN apt-get update && apt-get install -y --no-install-recommends curl wget \
     && GECKODRIVER_VERSION=`curl https://github.com/mozilla/geckodriver/releases/latest | grep -oE '[0-9]+.[0-9]+.[0-9]+'` \
     && wget https://github.com/jamesmortensen/geckodriver-arm-binaries/releases/download/${GECKODRIVER_VERSION}/geckodriver-${GECKODRIVER_VERSION}-linux-armv7l.tar.gz \
@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends curl wget \
     && cp target/release/geckodriver / \
     && rm -rf /var/lib/apt/lists/*
 
-FROM --platform=$BUILDPLATFORM arm32v7/python:3.9-slim-bullseye
+FROM arm32v7/python:3.9-slim-bullseye
 ENV PYTHONUNBUFFERED=1 \
     WEBDRIVER_PATH="/usr/local/bin/geckodriver" \
     FIREFOX_BIN="/usr/bin/firefox"
