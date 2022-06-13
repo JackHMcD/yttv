@@ -14,7 +14,7 @@ USER_AGENT = 'Mozilla/5.0 (SMART-TV; Linux; Tizen 4.0.0.2) AppleWebkit/605.1.15 
 SCRIPT_BLOCKER_VERSION = '1.42.4'
 SCRIPT_BLOCKER = 'uBlock0_' + SCRIPT_BLOCKER_VERSION + '.firefox.signed.xpi'
 SCRIPT_BLOCKER_URL = 'https://github.com/gorhill/uBlock/releases/download/' + SCRIPT_BLOCKER_VERSION + '/' + SCRIPT_BLOCKER
-FIREFOX_BIN = r'/usr/bin/firefox'
+FIREFOX_BIN = '/usr/bin/firefox'
 
 
 class YTTV:
