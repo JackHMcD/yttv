@@ -9,7 +9,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     && curl -sSLO https://github.com/jamesmortensen/geckodriver-arm-binaries/releases/download/v0.31.0/geckodriver-v0.31.0-linux-armv7l.tar.gz \
     && tar -zxf geckodriver-*.tar.gz \
     && mv geckodriver /usr/local/bin \
-    && pip install --no-cache-dir Scrapy selenium scrapy-selenium itemloaders itemadapter \
+    && pip install --no-cache-dir Scrapy selenium==4.2.0 scrapy-selenium itemloaders itemadapter \
     psycopg2 SQLAlchemy pandas rq redis python-dotenv python-dateutil \
     async-generator atomicwrites attrs certifi cffi colorama cryptography h11 \
     idna iniconfig outcome packaging pluggy py pycparser pyopenssl pyparsing pysocks requests \
