@@ -8,7 +8,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     && apt-get update && apt-get install -y --no-install-recommends $buildDeps firefox-esr libx11-xcb1 libdbus-glib-1-2 packagekit-gtk3-module pulseaudio pulseaudio-utils curl \
     && curl -sSLO https://github.com/jamesmortensen/geckodriver-arm-binaries/releases/download/v0.31.0/geckodriver-v0.31.0-linux-armv7l.tar.gz \
     && tar -zxf geckodriver-*.tar.gz \
-    && mv geckodriver /usr/local/bin \
+    && mv geckodriver /usr/bin \
     && pip install --no-cache-dir selenium==4.0.0a6.post2 \
     async-generator atomicwrites attrs certifi cffi colorama cryptography h11 \
     idna iniconfig outcome packaging pluggy py pycparser pyopenssl pyparsing pysocks requests \
